@@ -1,1 +1,3 @@
-web: gunicorn solar.wsgi
+web: gunicorn solar.wsgi:application --log-file - --log-level debug
+python manage.py collectstatic --noinput
+manage.py migrate
